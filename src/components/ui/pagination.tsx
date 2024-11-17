@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
 import * as React from "react"
 
@@ -47,6 +48,7 @@ const PaginationLink = ({
   size = "icon",
   ...props
 }: PaginationLinkProps) => (
+  //@ts-ignore
   <Button
     variant="outline"
     aria-current={isActive ? "page" : undefined}

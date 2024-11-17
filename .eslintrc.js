@@ -74,5 +74,4 @@ module.exports = {
     React: true,
     JSX: true,
   },
-  ignores: ['.prettierrc.js'],
 };

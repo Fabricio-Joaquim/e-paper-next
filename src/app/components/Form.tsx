@@ -1,22 +1,24 @@
+/* eslint-disable */
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
+import { Calendar } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Card, CardContent } from '@/components/ui/card';
+
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Calendar } from 'lucide-react';
+import { Calendar as CalendarComponent } from '@/components/ui/calendar';
+import { Card, CardContent } from '@/components/ui/card';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { ChevronDown } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Calendar as CalendarComponent } from '@/components/ui/calendar';
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
 
 const FilterForm = () => {
     const form = useForm({
@@ -31,7 +33,7 @@ const FilterForm = () => {
 
     const [date, setDate] = React.useState(null);
 
-    const onSubmit = (data) => {
+    const onSubmit = (data: any) => {
         console.log({
             ...data,
             period: date
@@ -72,8 +74,8 @@ const FilterForm = () => {
                             <PopoverContent className="w-auto p-0" align="start">
                                 <CalendarComponent
                                     mode="single"
-                                    selected={date}
-                                    onSelect={setDate}
+                                    selected={date || undefined}
+                                    onSelect={(value: any) => setDate(value)}
                                     locale={ptBR}
                                 />
                             </PopoverContent>

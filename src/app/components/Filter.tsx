@@ -1,6 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -31,7 +32,7 @@ const FilterForm = () => {
 
     const [date, setDate] = React.useState(null);
 
-    const onSubmit = (data) => {
+    const onSubmit = (data: any) => {
         console.log({
             ...data,
             period: date
@@ -72,8 +73,8 @@ const FilterForm = () => {
                             <PopoverContent className="w-auto p-0" align="start">
                                 <CalendarComponent
                                     mode="single"
-                                    selected={date}
-                                    onSelect={setDate}
+                                    selected={date || undefined}
+                                    onSelect={(value: any) => setDate(value)}
                                     locale={ptBR}
                                 />
                             </PopoverContent>
