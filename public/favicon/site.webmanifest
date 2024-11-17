@@ -1,0 +1,7 @@
+{
+  "name": "e-paper",
+  "short_name": "e-paper",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
